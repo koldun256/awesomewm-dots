@@ -3,10 +3,13 @@ local keys = {
     XF86AudioLowerVolume = helpers.common.volume.dec,
     XF86MonBrightnessUp = helpers.common.brightness.inc,
     XF86MonBrightnessDown = helpers.common.brightness.dec,
+    Mod4_s = function() awful.spawn('rofi -show tabi -modi "tabi:tabi"') end,
     Mod4_Left = awful.tag.viewprev,
     Mod4_Right = awful.tag.viewnext,
+    Lock_a = function() naughty.notify {text = 'asdfbjk:'} end,
     Mod4_Escape = awful.tag.history.restore,
     Mod4_j = function() awful.client.focus.byidx(1) end,
+    Mod4_a = require('config.powermenu'),
     Mod4_k = function() awful.client.focus.byidx(-1) end,
     Mod4_Shift_j = function() awful.client.swap.byidx(1) end,
     Mod4_Shift_k = function() awful.client.swap.byidx(-1) end,
@@ -37,6 +40,7 @@ local keys = {
     end,
     Mod4_r = function() awful.spawn('rofi -show drun') end,
     Mod4_w = function() awful.spawn('rofi -show window') end,
+    Mod4_f = function() awful.spawn('rofi -show file-browser') end,
     Mod4_p = function() awful.spawn.with_shell('flameshot gui &') end
 }
 
